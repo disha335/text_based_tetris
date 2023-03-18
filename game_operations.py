@@ -115,12 +115,12 @@ def drop(board):
 
                 lastInstance = None
                 if line[::-1].index("*") < line[::-1].index("x"):
-                    lastInstance = 9 - line[::-1].index("*")
+                    lastInstance = 11 - line[::-1].index("*")
                 else:
                     lastInstance = line.index("x")
         else:
             firstInstance = line.index("*")
-            lastInstance = 9 - line[::-1].index("*")
+            lastInstance = 11 - line[::-1].index("*")
         piece[i] = [firstInstance, lastInstance]
 
     # Detecting which spots the piece will fall into and validate
@@ -202,13 +202,13 @@ def move(board, direction):
 
                 lastInstance = None
                 if line[::-1].index("*") < line[::-1].index("x"):
-                    lastInstance = 9 - line[::-1].index("*")
+                    lastInstance = 11 - line[::-1].index("*")
                 else:
                     lastInstance = line.index("x")
             o = line.index("x")
         else:
             firstInstance = line.index("*")
-            lastInstance = 9 - line[::-1].index("*")
+            lastInstance = 11 - line[::-1].index("*")
         piece[i] = [firstInstance, lastInstance, o]
 
     # Heal parts of board where current piece is
@@ -271,12 +271,12 @@ def is_move_valid(board, command, direction = None):
 
                 lastInstance = None
                 if line[::-1].index("*") < line[::-1].index("x"):
-                    lastInstance = 9 - line[::-1].index("*")
+                    lastInstance = 11 - line[::-1].index("*")
                 else:
                     lastInstance = line.index("x")
         else:
             firstInstance = line.index("*")
-            lastInstance = 9 - line[::-1].index("*")
+            lastInstance = 11 - line[::-1].index("*")
         piece.append([i, firstInstance, lastInstance])
 
     if command == "move":
